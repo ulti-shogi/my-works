@@ -5,97 +5,212 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>リスト</title>
   <style>
-    /* ページ全体のスタイル */
     body {
-      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-      background-color: #f4f7f6; /* 優しいグレー背景 */
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f7f6;
       color: #333;
       margin: 0;
       padding: 40px 20px;
       display: flex;
       flex-direction: column;
-      align-items: center; /* 中央揃え */
+      align-items: center;
     }
-
-    /* タイトルのスタイル */
     h1 {
       font-size: 2rem;
       margin-bottom: 5px;
       color: #2c3e50;
-      letter-spacing: 2px;
     }
-
-    /* 説明文のスタイル */
     p {
       color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+    /* 登録フォームのスタイル */
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      width: 100%;
+      max-width: 560px;
       margin-bottom: 30px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .form-container input {
+      flex: 1;
+      min-width: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
       font-size: 1rem;
     }
+    .form-container button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .form-container button:hover {
+      background-color: #1c5980;
+    }
 
-    /* リスト全体のスタイル */
+    /* リストのスタイル */
     ul {
-      list-style: none; /* デフォルトの・を消す */
+      list-style: none;
       padding: 0;
       margin: 0;
       width: 100%;
-      max-width: 600px; /* PCで見ても広がりすぎないように制限 */
+      max-width: 600px;
       display: flex;
       flex-direction: column;
-      gap: 15px; /* ボタン同士の隙間 */
+      gap: 15px;
     }
-
-    /* 各リンク（ボタン）のスタイル */
     li a {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: #ffffff;
       padding: 20px 25px;
-      border-radius: 12px; /* 丸みを持たせる */
-      text-decoration: none; /* 下線を消す */
-      color: #2980b9; /* リンクの文字色 */
+      border-radius: 12px;
+      text-decoration: none;
+      color: #2980b9;
       font-weight: bold;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* 軽い影をつける */
-      transition: all 0.3s ease; /* ホバー時のアニメーションを滑らかに */
-      border: 1px solid transparent;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
     }
-
-    /* ホバー時（マウスを乗せた時）の矢印アイコンの準備 */
     li a::after {
       content: '➔';
-      font-size: 1.2rem;
       opacity: 0;
       transform: translateX(-10px);
       transition: all 0.3s ease;
     }
-
-    /* ホバー時（マウスを乗せた時）の動き */
     li a:hover {
-      transform: translateY(-3px); /* 少し上に浮く */
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* 影を濃くする */
-      background-color: #fafdff; /* 背景をほんのり青白く */
-      border-color: #d1e3f8;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      background-color: #fafdff;
     }
-
-    /* ホバー時に矢印を表示してスライドさせる */
     li a:hover::after {
       opacity: 1;
       transform: translateX(0);
+    }
+    /* 削除ボタン */
+    .delete-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-left: 10px;
+    }
+    .list-item-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    .list-item-wrapper a {
+      flex: 1;
     }
   </style>
 </head>
 <body>
   <h1>リスト</h1>
   <p>これまでに作ったWebサイト一覧</p>
-  <ul>
-    <li><a href="https://ulti-shogi.github.io/beta-open/index.html">あおいアプリ</a></li>
-    <li><a href="https://ulti-shogi.github.io/mate-shogi/index.html">将棋の殿堂</a></li>
-    <li><a href="https://ulti-shogi.github.io/shogi-ave-age/index.html">将棋の殿堂２</a></li>
-    <li><a href="https://ulti-shogi.github.io/my-pokedex/index.html">Myポケモン図鑑</a></li>
-    <li><a href="https://ulti-shogi.github.io/type-tool/index.html">タイプ相性検索ツール</a></li>
-    <li><a href="https://ulti-shogi.github.io/poke-candy/index.html">けいけんアメ最適化ツール</a></li>
-    <li><a href="https://ulti-shogi.github.io/minimum-wage-tool/index.html">最低賃金計算ツール</a></li>
+
+  <!-- 追加用フォーム -->
+  <div class="form-container">
+    <input type="text" id="siteName" placeholder="サイト名 (例: Google)">
+    <input type="url" id="siteUrl" placeholder="URL (例: https://...)">
+    <button onclick="addSite()">追加</button>
+  </div>
+
+  <ul id="siteList">
+    <!-- JavaScriptでここにリストが追加されます -->
   </ul>
+
+  <script>
+    // 初期データ（元々あったリスト）
+    const defaultSites = [
+      { name: "あおいアプリ", url: "" },
+      { name: "将棋の殿堂", url: "" },
+      { name: "将棋の殿堂２", url: "" },
+      { name: "Myポケモン図鑑", url: "" },
+      { name: "タイプ相性検索ツール", url: "" },
+      { name: "けいけんアメ最適化ツール", url: "" },
+      { name: "最低賃金計算ツール", url: "" }
+    ];
+
+    // LocalStorageからデータを読み込む（なければ初期データを使う）
+    let sites = JSON.parse(localStorage.getItem("myWebSites")) || defaultSites;
+
+    // 画面にリストを表示する関数
+    function renderSites() {
+      const listElement = document.getElementById("siteList");
+      listElement.innerHTML = ""; // 一旦リセット
+
+      sites.forEach((site, index) => {
+        const li = document.createElement("li");
+        li.className = "list-item-wrapper";
+        
+        // リンク部分
+        const a = document.createElement("a");
+        a.href = site.url || "#";
+        a.target = site.url ? "_blank" : "_self"; // URLがあれば別タブで開く
+        a.textContent = site.name;
+
+        // 削除ボタン
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "削除";
+        deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = () => removeSite(index);
+
+        li.appendChild(a);
+        li.appendChild(deleteBtn);
+        listElement.appendChild(li);
+      });
+    }
+
+    // サイトを追加する関数
+    function addSite() {
+      const nameInput = document.getElementById("siteName");
+      const urlInput = document.getElementById("siteUrl");
+
+      const name = nameInput.value.trim();
+      const url = urlInput.value.trim();
+
+      if (name === "") {
+        alert("サイト名を入力してください。");
+        return;
+      }
+
+      // 新しいサイトを配列に追加
+      sites.push({ name: name, url: url });
+      
+      // LocalStorageに保存
+      localStorage.setItem("myWebSites", JSON.stringify(sites));
+
+      // 入力欄を空にして再描画
+      nameInput.value = "";
+      urlInput.value = "";
+      renderSites();
+    }
+
+    // サイトを削除する関数
+    function removeSite(index) {
+      if (confirm("このサイトを削除しますか？")) {
+        sites.splice(index, 1); // 配列から削除
+        localStorage.setItem("myWebSites", JSON.stringify(sites)); // 保存
+        renderSites(); // 再描画
+      }
+    }
+
+    // ページ読み込み時にリストを表示
+    renderSites();
+  </script>
 </body>
 </html>
