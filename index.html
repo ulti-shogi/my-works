@@ -136,7 +136,7 @@
 
   <!-- 追加用フォーム -->
   <div class="form-container">
-    <input type="text" id="siteName" placeholder="サイト名 (例: Myポケモン図鑑)">
+    <input type="text" id="siteName" placeholder="サイト名 (例: タイプ相性検索ツール)">
     <input type="url" id="siteUrl" placeholder="URL (例: https://...)">
     <button onclick="addSite()">追加</button>
   </div>
@@ -158,7 +158,7 @@
     ];
 
     // LocalStorageからデータを読み込む
-    let sites = JSON.parse(localStorage.getItem("myWebSites")) || defaultSites;
+    let sites = JSON.parse(localStorage.getItem("myWebSites-2")) || defaultSites;
 
     // 画面にリストを表示する関数
     function renderSites() {
@@ -201,7 +201,7 @@
       }
 
       sites.push({ name: name, url: url });
-      localStorage.setItem("myWebSites", JSON.stringify(sites));
+      localStorage.setItem("myWebSites-2", JSON.stringify(sites));
 
       nameInput.value = "";
       urlInput.value = "";
@@ -212,7 +212,7 @@
     function removeSite(index) {
       if (confirm("このサイトを削除しますか？")) {
         sites.splice(index, 1); 
-        localStorage.setItem("myWebSites", JSON.stringify(sites)); 
+        localStorage.setItem("myWebSites-2", JSON.stringify(sites)); 
         renderSites(); 
       }
     }
