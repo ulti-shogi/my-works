@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リスト</title>
+  <style>
+    /* ページ全体のスタイル */
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      background-color: #f4f7f6; /* 優しいグレー背景 */
+      color: #333;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 中央揃え */
+    }
+
+    /* タイトルのスタイル */
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+      color: #2c3e50;
+      letter-spacing: 2px;
+    }
+
+    /* 説明文のスタイル */
+    p {
+      color: #7f8c8d;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    /* リスト全体のスタイル */
+    ul {
+      list-style: none; /* デフォルトの・を消す */
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 600px; /* PCで見ても広がりすぎないように制限 */
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* ボタン同士の隙間 */
+    }
+
+    /* 各リンク（ボタン）のスタイル */
+    li a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 20px 25px;
+      border-radius: 12px; /* 丸みを持たせる */
+      text-decoration: none; /* 下線を消す */
+      color: #2980b9; /* リンクの文字色 */
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* 軽い影をつける */
+      transition: all 0.3s ease; /* ホバー時のアニメーションを滑らかに */
+      border: 1px solid transparent;
+    }
+
+    /* ホバー時（マウスを乗せた時）の矢印アイコンの準備 */
+    li a::after {
+      content: '➔';
+      font-size: 1.2rem;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+
+    /* ホバー時（マウスを乗せた時）の動き */
+    li a:hover {
+      transform: translateY(-3px); /* 少し上に浮く */
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* 影を濃くする */
+      background-color: #fafdff; /* 背景をほんのり青白く */
+      border-color: #d1e3f8;
+    }
+
+    /* ホバー時に矢印を表示してスライドさせる */
+    li a:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <h1>リスト</h1>
+  <p>これまでに作ったWebサイト一覧</p>
+  <ul>
+    <li><a href="https://ulti-shogi.github.io/beta-open/index.html">あおいアプリ</a></li>
+    <li><a href="https://ulti-shogi.github.io/mate-shogi/index.html">将棋の殿堂</a></li>
+    <li><a href="https://ulti-shogi.github.io/shogi-ave-age/index.html">将棋の殿堂２</a></li>
+    <li><a href="https://ulti-shogi.github.io/my-pokedex/index.html">Myポケモン図鑑</a></li>
+    <li><a href="https://ulti-shogi.github.io/type-tool/index.html">タイプ相性検索ツール</a></li>
+    <li><a href="https://ulti-shogi.github.io/poke-candy/index.html">けいけんアメ最適化ツール</a></li>
+    <li><a href="https://ulti-shogi.github.io/minimum-wage-tool/index.html">最低賃金計算ツール</a></li>
+  </ul>
+</body>
+</html>
